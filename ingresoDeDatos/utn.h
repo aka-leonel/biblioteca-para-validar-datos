@@ -22,27 +22,24 @@ int utn_getNumeroConSigno(int* pResultado,char* mensaje, char* mensajeError,int 
 //-------------
 
 //Pedir REAL: Float positivo/negativo
-
 int esNumeroReal(char* str);
-//utiliza myGets() y esNumeroReal()
-//es usada por utn_getNumeroReal()
 int getFloatConSigno(float* pResultado);
 int utn_getNumeroReal(float* pResultado,char* mensaje, char* mensajeError,float minimo, float maximo, int reintentos);
+//-------------------
+
+//Ingresar TEXTO
+int utn_getTexto(char* pTexto,int tamBuffer, char* mensaje);
+
+//ingresar CHAR
+int utn_getLetra(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos);
 
 
 //TELEFONO--------------------
 //usada por getTelefono()
 int esTelefono(char str[]);
-
-//utiliza myGets() y esTelefono()
-//es usada por utn_getTelefono()
 int getTelefono(char* pResultado);
-
-//utiliza getTelefono()
 int utn_getTelefono(char* pResultado,char* mensaje, char* mensajeError, int reintentos);
-//--------------------
-//usa esTelefono()
-int utn_getTelefono(char* pResultado,char* mensaje, char* mensjaeError, int reintentos);
+//--------------------;
 
 
 

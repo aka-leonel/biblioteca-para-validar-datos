@@ -329,6 +329,73 @@ int utn_getNumeroReal(float* pResultado,char* mensaje, char* mensajeError,float 
 //FIN FUNCIONES PARA FLOAT
 
 
+//FUNCION p/ SOLICITAR TEXTO. usa myGets()
+
+/** \brief solicita el ingreso de texto
+ *
+ * \param puntero a espacio donde almacenar array de char
+ * \param tamanio del buffer, se copiara n-1 caracteres
+ * \param mensaje para solicitar el texto
+ * \return
+ *
+ */
+
+int utn_getTexto(char* pTexto,int tamBuffer, char* mensaje)
+{
+    int retorno=-1;
+    char buffer[tamBuffer];
+    if(pTexto != NULL && tamBuffer>0)
+    {
+        printf("\n%s", mensaje);
+        if(myGets(buffer,sizeof(buffer))==0)
+        {
+            //pTexto = buffer;//que boludo...
+            strcpy(pTexto, buffer);
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+
+//FUNCION PARA PEDIR LETRA
+/** \brief solicita el ingreso de un char
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+int utn_getLetra(char* pResultado,
+                 char* mensaje,
+                 char* mensajeError,
+                 char minimo,
+                 char maximo,
+                 int reintentos)
+{
+    char bufferChar;
+    int retorno=-1;
+
+    if(pResultado != NULL && mensaje != NULL && mensajeError != NULL)
+    {
+        while(reintentos>0)
+        {
+            reintentos--;
+            printf("%s", mensaje);
+            scanf("%c",&bufferChar);
+            if(bufferChar >= minimo && bufferChar <= maximo)
+            {
+                *pResultado = bufferChar;
+                retorno =0;
+                break;
+            }
+
+            printf("%s",mensajeError);
+        }
+    }
+
+    return retorno;
+}
+
 //FUNCIONES PARA PEDIR TELEFONO
 /**
  * \brief Verifica si el valor recibido contiene solo números y '-'
