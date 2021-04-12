@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1618263854 source:c:\users\leonel\desktop\codeblocks-workspace\biblioteca-utn\ingresodedatos\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1618263854 source:c:\users\leonel\desktop\codeblocks-workspace\biblioteca-utn\ingresodedatos\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
