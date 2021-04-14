@@ -2,6 +2,8 @@
  * Biblioteca de ingreso de datos
  * Autor: El Joven Leonel Godoy
  * Abril de 2021
+ * Programado en Codeblocks, en windows10
+ * NOTA: programa aun sin terminar
  */
 
 
